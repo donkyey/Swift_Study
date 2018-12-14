@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1VR-Zv-yVh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="qig-gV-axQ">
+            <objects>
+                <viewController id="Lhp-Ac-xCJ" customClass="ViewController" customModule="memoSimple" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KTD-B4-XBb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XBS-M6-Xti">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목을 작성하고 메모를 해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qe6-Pt-L72">
+                                <rect key="frame" x="5" y="68" width="220" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="Fsw-9B-IDf"/>
+                                    <constraint firstAttribute="height" constant="21" id="WsD-9Y-PxU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XBS-M6-Xti" firstAttribute="top" secondItem="U0C-Cv-7Q3" secondAttribute="top" id="LqQ-2e-dsi"/>
+                            <constraint firstItem="Qe6-Pt-L72" firstAttribute="leading" secondItem="U0C-Cv-7Q3" secondAttribute="leading" constant="5" id="c2v-Fw-R67"/>
+                            <constraint firstItem="Qe6-Pt-L72" firstAttribute="top" secondItem="U0C-Cv-7Q3" secondAttribute="top" constant="4" id="i4t-rq-L7g"/>
+                            <constraint firstItem="XBS-M6-Xti" firstAttribute="bottom" secondItem="U0C-Cv-7Q3" secondAttribute="bottom" id="kcJ-7W-BoV"/>
+                            <constraint firstItem="XBS-M6-Xti" firstAttribute="leading" secondItem="U0C-Cv-7Q3" secondAttribute="leading" id="vQa-Or-Czs"/>
+                            <constraint firstItem="XBS-M6-Xti" firstAttribute="trailing" secondItem="U0C-Cv-7Q3" secondAttribute="trailing" id="wfx-CJ-WTM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="U0C-Cv-7Q3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="trU-m0-vUp">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="vc1-s9-HF2">
+                            <connections>
+                                <action selector="btnAdd:" destination="Lhp-Ac-xCJ" id="lni-Ey-Jb2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="lblHelp" destination="Qe6-Pt-L72" id="lKg-5x-UV4"/>
+                        <outlet property="txtMemo" destination="XBS-M6-Xti" id="lEl-gP-Hqw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mTI-33-e0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3109.5999999999999" y="133.5832083958021"/>
+        </scene>
+        <!--My MemoVC-->
+        <scene sceneID="a1d-Zf-9MC">
+            <objects>
+                <tableViewController id="X2r-ZX-cDl" customClass="MyMemoVC" customModule="memoSimple" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nty-oj-ORA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="73" id="nDP-Ca-IqI" customClass="TableViewCell" customModule="memoSimple" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="73"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nDP-Ca-IqI" id="Cje-Kj-FbS">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="72.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="제목이 들어가요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XST-jw-ZZ5">
+                                            <rect key="frame" x="16" y="11" width="108" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="내용이 들어가요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvN-Wu-352">
+                                            <rect key="frame" x="16" y="41" width="108" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="날짜가 들어가요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QG9-6G-0I8">
+                                            <rect key="frame" x="264" y="44" width="95" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lblContent" destination="hvN-Wu-352" id="Y4z-91-TDI"/>
+                                    <outlet property="lblTime" destination="QG9-6G-0I8" id="ayL-Dc-Wct"/>
+                                    <outlet property="lblTitle" destination="XST-jw-ZZ5" id="Irf-cd-aPN"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="X2r-ZX-cDl" id="qwh-YZ-wa2"/>
+                            <outlet property="delegate" destination="X2r-ZX-cDl" id="scL-g7-nNW"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="fkD-ux-Mi9">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="qeX-iu-DlS">
+                            <connections>
+                                <segue destination="Lhp-Ac-xCJ" kind="show" id="YyO-ev-mwT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qdy-PO-HEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2204" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LyU-TM-JJn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1VR-Zv-yVh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f3f-Uu-fsH">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="X2r-ZX-cDl" kind="relationship" relationship="rootViewController" id="k5s-Ul-jxs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M9U-OB-Thv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1264.8" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
